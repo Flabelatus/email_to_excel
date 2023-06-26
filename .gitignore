@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+dist
+build
+*.spec
+email2Excel
+.idea/
