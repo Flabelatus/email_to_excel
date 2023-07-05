@@ -6,11 +6,11 @@ import pandas as pd
 # IMAP server settings
 IMAP_SERVER = 'mail.zxcs.nl'
 IMAP_PORT = 993
-USERNAME = 'fractie@pvdarotterdam.nl'
+USERNAME = 'email@example.com'
 PASSWORD = ''
 
 # Sender's email address
-SENDER_EMAIL = 'rotterdam@pvda.nl'
+SENDER_EMAIL = 'sender_email@example.com'
 
 # Excel file path to save the emails
 EXCEL_FILE_PATH = 'emails.xlsx'

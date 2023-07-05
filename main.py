@@ -9,13 +9,13 @@ import datetime
 from flet_core import FilePickerResultEvent
 
 IMAP_SERVER = 'imap.gmail.com'
-USERNAME = 'jooshesh.javid@gmail.com'
-PASSWORD = 'kocrzkrafhwbifvd'
+USERNAME = 'email.example.com'
+PASSWORD = 'password'
 ENCODINGS = ["utf-8", "cp1252", "ascii", "latin-1", "iso-8859-1", "iso-8859-15", "utf-16", "utf-32"]
 WIDTH = 300
 
-SENDER = "rotterdam@pvda.nl"
-SENDER_TEST = "anntje@gmail.com"
+SENDER = "sender@example.com"
+SENDER_TEST = "sender@example.com"
 MAIL_SERVER_NAME = "mail.zxcs.nl"
 
 
