@@ -1,3 +1,5 @@
+import time
+
 import flet
 from flet import FilledButton, TextField, Text, Row, Page, FilePicker
 import imaplib
@@ -29,18 +31,19 @@ def email_to_excel(
 ):
     # Email credentials and server details
     # Connect to the IMAP server
-    imap = imaplib.IMAP4_SSL('mail.zxcs.nl')
+    imap = imaplib.IMAP4_SSL(IMAP_SERVER)
     imap.login(username_text_filed.value, password_text_filed.value)
     imap.select('INBOX')
 
     today = datetime.datetime.today()
-    since_date = today - datetime.timedelta(days=14)
+    since_date = today - datetime.timedelta(days=20)
     before_date = today
 
     since_date_str = since_date.strftime('%d-%b-%Y')
     before_date_str = before_date.strftime('%d-%b-%Y')
 
     # Search for all emails
+    print(sender_address_text_field.value)
     status, response = imap.search(None, 'FROM', sender_address_text_field.value, "SINCE", since_date_str, "BEFORE",
                                    before_date_str)
     email_ids = response[0].split()
@@ -181,6 +184,7 @@ def main(page: Page):
     def execute(event: FilledButton):
         starting_msg.visible = True
         page.update()
+
         email_to_excel(
             # mail_server_text_filed,
             username_text_filed,
@@ -192,6 +196,7 @@ def main(page: Page):
         final_msg.visible = True
         starting_msg.visible = False
         page.update()
+        time.sleep(2)
 
     def get_path(event: FilePickerResultEvent):
         try:
